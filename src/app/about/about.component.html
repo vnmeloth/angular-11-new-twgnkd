@@ -1,0 +1,24 @@
+ <form (ngSubmit)="onSubmit(personForm)" #personForm="ngForm">
+    {{personForm.form.value | json}}
+    <br/>
+    {{person | json}}
+    <br/>
+    {{firstName.className}}
+  <div>
+    <label for="firstName">First Name:</label>
+    <input type="text" #firstName id="firstName" name="firstName" [(ngModel)]="person.firstName" required>
+  </div>
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" ngModel required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" ngModel required>
+  </div>
+  <div>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" ngModel required>
+  </div>
+  <button type="submit" [disabled]="!personForm.form.valid">Submit</button>
+</form> 

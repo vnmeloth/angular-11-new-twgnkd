@@ -1,0 +1,4 @@
+<li *ngFor="let user of users">
+  {{ user }}
+</li>
+<p *ngIf="users.length > 0">{{message | uppercase | customPipe:"Vipin"}}</p>
